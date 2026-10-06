@@ -1,5 +1,9 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     id("com.android.application")
+    // 必须应用：否则 kotlinOptions / kotlin 扩展访问器不存在，脚本编译期直接失败
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
@@ -25,9 +29,12 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+}
 
-    kotlinOptions {
-        jvmTarget = "17"
+// Kotlin 2.0+ 用 compilerOptions（kotlinOptions 已废弃）
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_17)
     }
 }
 
