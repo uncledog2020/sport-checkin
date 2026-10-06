@@ -1,0 +1,23 @@
+# Gradle
+.gradle/
+build/
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+
+# 签名文件绝不能上传
+*.jks
+*.keystore
+keystore.properties
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 注意：app/src/main/assets/ 里的网页文件是有意提交的，
+# 别把它加进忽略列表，否则云端编译出来的 APK 是空壳。
