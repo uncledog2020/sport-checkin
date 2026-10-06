@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-    <background android:drawable="@color/ic_launcher_background" />
+    <!-- 背景纯色，实际被前景层的满幅照片完全盖住，只作兜底 -->
+    <background android:drawable="@mipmap/ic_launcher_bg" />
+    <!-- 前景：照片放大溢出铺满，任意遮罩裁切后都满幅无白边 -->
     <foreground android:drawable="@mipmap/ic_launcher_foreground" />
-    <monochrome android:drawable="@mipmap/ic_launcher_foreground" />
 </adaptive-icon>

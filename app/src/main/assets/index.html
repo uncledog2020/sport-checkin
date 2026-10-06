@@ -192,10 +192,16 @@
   <div class="acts">
     <button class="btn" id="btnToday">今日打卡 +30</button>
     <button class="btn ghost" id="btnFill">补打卡（选漏掉的日子）</button>
-    <div class="btnrow">
-      <button class="btn ghost" id="btnSettle">本月结算</button>
-      <button class="btn ghost" id="btnSettings">设置</button>
-    </div>
+    <button class="btn ghost" id="btnSettle">本月结算</button>
+  </div>
+</div>
+
+<!-- 设置入口：单独一张卡，别跟打卡按钮混在一起 -->
+<div class="card">
+  <h2 class="sec">设置</h2>
+  <div class="desc" style="margin:-2px 0 12px">金额、起始日期在这里改，改完立刻生效</div>
+  <div class="acts">
+    <button class="btn ghost" id="btnSettings">⚙ 打开设置</button>
   </div>
 </div>
 
@@ -635,7 +641,7 @@ $("btnSettings").addEventListener("click", function(){
   $("sName").value = S.name;
   $("sAmt").value = S.amount;
   $("sStart").value = S.start;
-  $("sWarn").innerHTML = "起始日期之前的日子不计入考核。<br>改单价不影响已结算月份（它们各自记着自己的单价）。";
+  $("sWarn").innerHTML = "起始日期之前的日子不计入考核。<br>改单价不影响已结算月份（它们各自记着自己的单价）。<br>改起始日期会立即影响所有未结算月份的统计范围。";
   openM("mSet");
 });
 $("setOk").addEventListener("click", function(){
