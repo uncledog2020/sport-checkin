@@ -61,8 +61,9 @@ class MainActivity : Activity() {
         }
 
         // 深色模式下强制浅色，避免系统主题把背景染黑
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
-            webView.forceDark = WebSettings.FORCE_DARK_OFF
+        // forceDark 是 WebSettings 的属性（不是 WebView 的），FORCE_DARK_OFF 是 API 29 (Q) 引入
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            webView.settings.forceDark = WebSettings.FORCE_DARK_OFF
         }
 
         webView.loadUrl("file:///android_asset/index.html")
